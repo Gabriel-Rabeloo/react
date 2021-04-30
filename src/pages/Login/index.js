@@ -8,8 +8,8 @@ import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styled';
 import * as actions from '../../store/modules/auth/actions';
 
-export default function Login() {
-  const dispatch = useDispatch;
+export default function Login(props) {
+  const dispatch = useDispatch();
 
   const prevPath = get(props, 'location.state.prevPath', '/');
 

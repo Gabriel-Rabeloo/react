@@ -19,7 +19,7 @@ function* loginResquest({ payload }) {
   } catch (e) {
     toast.error('Usuário ou senha inválidos');
 
-    yield put(actions.loginFailure);
+    yield put(actions.loginFailure());
   }
 }
 
