@@ -5,7 +5,7 @@ import MyRoute from './MyRoute';
 
 import Student from '../pages/Student';
 import Students from '../pages/Students';
-import Photos from '../pages/Photos';
+import Photos from '../pages/Picture';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
