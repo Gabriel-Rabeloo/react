@@ -46,6 +46,16 @@ export default createGlobalStyle`
   body .Toastify .Toastify__toast-container .Toastify__toast--error {
     background: ${colors.errorColor}
   }
+
+  .Page404-P {
+    color: #808080;
+    text-align: center
+  }
+
+  .Page404 {
+    color: #fff;
+    text-align: center
+  }
 `;
 
 export const Container = styled.section`
