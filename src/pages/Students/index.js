@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { get } from 'lodash';
+import { toast } from 'react-toastify';
 import { FaUserCircle, FaEdit, FaWindowClose } from 'react-icons/fa';
 
 import { Container } from '../../styles/GlobalStyles';
@@ -24,14 +25,45 @@ export default function Students() {
     getData();
   }, []);
 
+  const handleDeleteAsk = (e) => {
+    e.preventDefault();
+    const exclamation = e.currentTarget.nextSibling;
+    exclamation.setAttribute('display', 'block');
+    e.currentTarget.remove();
+    toast.info('Clique novamente para confirmar.');
+  };
+
+  const handleDelete = async (e, id, index) => {
+    e.persist();
+
+    try {
+      setIsLoading(true);
+      await axios.delete(`/alunos/${id}`);
+      const newStudents = [...students];
+      newStudents.splice(index, 1);
+      setStudents(newStudents);
+      setIsLoading(false);
+    } catch (err) {
+      const status = get(err, 'response.status', 0);
+
+      if (status === 401) {
+        toast.error('Você precisa fazer login');
+      } else {
+        toast.error('Ocorreu um erro ao excluir aluno');
+      }
+
+      setIsLoading(false);
+    }
+  };
+
   return (
     <Container>
       <Loading isLoading={isLoading} />
       <h1>Alunos</h1>
 
       <StudentContainer>
-        {students.map((student) => (
-          <div kye={String(student.id)}>
+        {students.map((student, index) => (
+          <div key={String(student.id)}>
             <ProfilePicture>
               {get(student, 'Fotos[0].url', false) ? (
                 <img src={student.Fotos[0].url} alt="" />
@@ -47,9 +79,19 @@ export default function Students() {
               <FaEdit size={16} />
             </Link>
 
-            <Link to={`/student/${student.id}/delete`}>
+            <Link
+              onClick={handleDeleteAsk}
+              to={`/student/${student.id}/delete`}
+            >
               <FaWindowClose size={16} />
             </Link>
+
+            <FaWindowClose
+              size={16}
+              display="none"
+              cursor="pointer"
+              onClick={(e) => handleDelete(e, student.id, index)}
+            />
           </div>
         ))}
       </StudentContainer>
