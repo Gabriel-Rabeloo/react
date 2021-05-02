@@ -31,7 +31,7 @@ export default function Register() {
     e.preventDefault();
     let formErrors = false;
 
-    if (nome.length < 3 || nome.length > 255 || nome.value == null) {
+    if (nome.length < 3 || nome.length > 255) {
       formErrors = true;
       toast.error('Nome deve ter entre 3 e 255 caracteres');
     }
