@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 export default function MyRoute({ component: Component, isCLosed, ...rest }) {
-  const isLoggeIn = useSelector((state) => state.auth.isLoggeIn);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-  if (isCLosed && !isLoggeIn) {
+  if (isCLosed && !isLoggedIn) {
     return (
       <Redirect
         to={{ pathname: '/login', state: { prevPath: rest.location.pathname } }}

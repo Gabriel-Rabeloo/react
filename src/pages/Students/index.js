@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { FaUserCircle, FaEdit, FaWindowClose } from 'react-icons/fa';
 
 import { Container } from '../../styles/GlobalStyles';
-import { ProfilePicture, StudentContainer } from './styled';
+import { ProfilePicture, StudentContainer, NewStudent } from './styled';
 import axios from '../../services/axios';
 
 import Loading from '../../components/Loading';
@@ -60,6 +60,8 @@ export default function Students() {
     <Container>
       <Loading isLoading={isLoading} />
       <h1>Alunos</h1>
+
+      <NewStudent to="/student/">Novo aluno</NewStudent>
 
       <StudentContainer>
         {students.map((student, index) => (

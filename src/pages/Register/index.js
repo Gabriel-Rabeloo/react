@@ -25,13 +25,13 @@ export default function Register() {
 
     setNome(nameStored);
     setEmail(emailStored);
-  }, []);
+  }, [emailStored, id, nameStored]);
 
   async function handleSubmit(e) {
     e.preventDefault();
     let formErrors = false;
 
-    if (nome.length < 3 || nome.length > 255) {
+    if (nome.length < 3 || nome.length > 255 || nome.value == null) {
       formErrors = true;
       toast.error('Nome deve ter entre 3 e 255 caracteres');
     }
