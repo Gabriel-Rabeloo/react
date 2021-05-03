@@ -1,4 +1,4 @@
-# Projeto simples feito com React com foco em utilizar e adicionar dados à uma API criada por mim em NodeJs.
+# Projeto feito com React, tendo foco em utilizar e adicionar dados à uma API criada por mim em NodeJs.
 
 Comandos para a executar o programa. 
 
