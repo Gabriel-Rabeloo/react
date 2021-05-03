@@ -31,7 +31,11 @@ export default function Register() {
     e.preventDefault();
     let formErrors = false;
 
-    if (nome.length < 3 || nome.length > 255) {
+    const fixSpaces = (string) => string.trim().replace(/\s{2,}/g, ' ');
+
+    const nameOk = fixSpaces(nome);
+
+    if (nameOk.length < 3 || nameOk.length > 255) {
       formErrors = true;
       toast.error('Nome deve ter entre 3 e 255 caracteres');
     }

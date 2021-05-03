@@ -63,13 +63,17 @@ export default function Student({ match }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let formErrors = false;
+    const fixSpaces = (string) => string.trim().replace(/\s{2,}/g, ' ');
 
-    if (nome.length < 3 || nome.length > 255) {
+    const nameOk = fixSpaces(nome);
+    const lastNameOk = fixSpaces(sobrenome);
+
+    if (nameOk.length < 3 || nameOk.length > 255) {
       toast.error('Nome precisa ter entre 3 e 255 caracteres');
       formErrors = true;
     }
 
-    if (sobrenome.length < 3 || sobrenome.length > 255) {
+    if (lastNameOk.length < 3 || lastNameOk.length > 255) {
       toast.error('Sobrenome precisa ter entre 3 e 255 caracteres');
       formErrors = true;
     }
