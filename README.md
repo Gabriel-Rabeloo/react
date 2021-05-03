@@ -1,0 +1,10 @@
+# Projeto feito com React, tendo foco em utilizar e adicionar dados à uma API criada por mim em NodeJs.
+
+Comandos para a executar o programa. 
+
+  npm i       para instalar todas as dependências.
+  
+  npm start   para iniciar o programa.
+
+Neste momento o programa deve estar rodando em: http://localhost:3000/
+
