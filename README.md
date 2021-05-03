@@ -4,12 +4,14 @@
 HOW TO CONFIGURE THE PROGRAM
 ``
 
-`npm i`  To install all dependencies.
+ - `npm i`
+
+  To install all dependencies.
 
 ``
 HOW TO USE THE PROGRAM
 ``
 
-`npm start`
+ - `npm start`
 
 At this point, the program should be running at: http://localhost:3000/
