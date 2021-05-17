@@ -1,10 +1,17 @@
-# Projeto feito com React, tendo foco em utilizar e adicionar dados à uma API criada por mim em NodeJs.
+# Project made with React, focusing on using and adding data to an API created by me in NodeJs.
 
-Comandos para a executar o programa. 
+``
+HOW TO CONFIGURE THE PROGRAM
+``
 
-  npm i       para instalar todas as dependências.
-  
-  npm start   para iniciar o programa.
+ - `npm i`
 
-Neste momento o programa deve estar rodando em: http://localhost:3000/
+  To install all dependencies.
 
+``
+HOW TO USE THE PROGRAM
+``
+
+ - `npm start`
+
+At this point, the program should be running at: http://localhost:3000/
