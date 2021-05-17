@@ -59,6 +59,7 @@ export default function Students() {
   return (
     <Container>
       <Loading isLoading={isLoading} />
+
       <h1>Alunos</h1>
 
       <NewStudent to="/student/">Novo aluno</NewStudent>

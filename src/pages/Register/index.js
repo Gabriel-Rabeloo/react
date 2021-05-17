@@ -29,6 +29,7 @@ export default function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     let formErrors = false;
 
     const fixSpaces = (string) => string.trim().replace(/\s{2,}/g, ' ');

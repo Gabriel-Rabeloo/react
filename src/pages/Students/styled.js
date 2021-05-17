@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 export const StudentContainer = styled.div`
   margin-top: 20px;
 
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   div {
     display: flex;
     align-items: center;

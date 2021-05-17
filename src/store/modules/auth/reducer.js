@@ -59,6 +59,24 @@ export default function (state = initialState, action) {
       return newState;
     }
 
+    case types.CONFIRMATION_REQUEST: {
+      const newState = { ...state };
+      newState.isLoading = true;
+      return newState;
+    }
+
+    case types.CONFIRMATION_SUCCESS: {
+      const newState = { ...state };
+      newState.isLoading = false;
+      return newState;
+    }
+
+    case types.CONFIRMATION_FAILURE: {
+      const newState = { ...state };
+      newState.isLoading = false;
+      return newState;
+    }
+
     default: {
       return state;
     }

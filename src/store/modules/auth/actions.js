@@ -42,9 +42,30 @@ export function registerRequest(payload) {
   };
 }
 
-export function resgisterFailure(payload) {
+export function registerFailure(payload) {
   return {
     type: types.REGISTER_FAILURE,
+    payload,
+  };
+}
+
+export function confirmationRequest(payload) {
+  return {
+    type: types.CONFIRMATION_REQUEST,
+    payload,
+  };
+}
+
+export function confirmationSuccess(payload) {
+  return {
+    type: types.CONFIRMATION_SUCCESS,
+    payload,
+  };
+}
+
+export function confirmationFailure(payload) {
+  return {
+    type: types.CONFIRMATION_FAILURE,
     payload,
   };
 }

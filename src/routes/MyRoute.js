@@ -3,10 +3,10 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
-export default function MyRoute({ component: Component, isCLosed, ...rest }) {
+export default function MyRoute({ component: Component, isClosed, ...rest }) {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-  if (isCLosed && !isLoggedIn) {
+  if (isClosed && !isLoggedIn) {
     return (
       <Redirect
         to={{ pathname: '/login', state: { prevPath: rest.location.pathname } }}
@@ -19,11 +19,11 @@ export default function MyRoute({ component: Component, isCLosed, ...rest }) {
 }
 
 MyRoute.defaultProps = {
-  isCLosed: false,
+  isClosed: false,
 };
 
 MyRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
     .isRequired,
-  isCLosed: PropTypes.bool,
+  isClosed: PropTypes.bool,
 };

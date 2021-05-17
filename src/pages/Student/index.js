@@ -23,7 +23,7 @@ export default function Student({ match }) {
   const [email, setEmail] = useState('');
   const [idade, setAge] = useState('');
   const [peso, setWeight] = useState('');
-  const [altura, setheight] = useState('');
+  const [altura, setHeight] = useState('');
   const [foto, setPicture] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -43,7 +43,7 @@ export default function Student({ match }) {
         setEmail(data.email);
         setAge(data.idade);
         setWeight(data.peso);
-        setheight(data.altura);
+        setHeight(data.altura);
 
         setIsLoading(false);
       } catch (err) {
@@ -157,65 +157,66 @@ export default function Student({ match }) {
           </Link>
         </ProfilePicture>
       )}
+      <div>
+        <Form onSubmit={handleSubmit}>
+          <label htmlFor="nome">
+            Nome:
+            <input
+              type="text"
+              value={nome}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Nome"
+            />
+          </label>
+          <label htmlFor="sobrenome">
+            Sobrenome:
+            <input
+              type="text"
+              value={sobrenome}
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Sobrenome"
+            />
+          </label>
+          <label htmlFor="email">
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="E-mail"
+            />
+          </label>
+          <label htmlFor="idade">
+            Idade:
+            <input
+              type="number"
+              value={idade}
+              onChange={(e) => setAge(e.target.value)}
+              placeholder="Idade"
+            />
+          </label>
+          <label htmlFor="peso">
+            Peso
+            <input
+              type="text"
+              value={peso}
+              onChange={(e) => setWeight(e.target.value)}
+              placeholder="Peso"
+            />
+          </label>
+          <label htmlFor="altura">
+            Altura:
+            <input
+              type="text"
+              value={altura}
+              onChange={(e) => setHeight(e.target.value)}
+              placeholder="Altura"
+            />
+          </label>
 
-      <Form onSubmit={handleSubmit}>
-        <label htmlFor="nome">
-          Nome:
-          <input
-            type="text"
-            value={nome}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Seu nome"
-          />
-        </label>
-        <label htmlFor="sobrenome">
-          Sobrenome:
-          <input
-            type="text"
-            value={sobrenome}
-            onChange={(e) => setLastName(e.target.value)}
-            placeholder="Seu sobrenome"
-          />
-        </label>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Seu e-mail"
-          />
-        </label>
-        <label htmlFor="idade">
-          Idade:
-          <input
-            type="number"
-            value={idade}
-            onChange={(e) => setAge(e.target.value)}
-            placeholder="Sua idade"
-          />
-        </label>
-        <label htmlFor="peso">
-          Peso
-          <input
-            type="text"
-            value={peso}
-            onChange={(e) => setWeight(e.target.value)}
-            placeholder="Seu peso"
-          />
-        </label>
-        <label htmlFor="altura">
-          Altura:
-          <input
-            type="text"
-            value={altura}
-            onChange={(e) => setheight(e.target.value)}
-            placeholder="Sua senha"
-          />
-        </label>
-
-        <button type="submit">{id ? 'Salvar' : 'Cadastrar'}</button>
-      </Form>
+          <button type="submit">{id ? 'Salvar' : 'Cadastrar'}</button>
+        </Form>
+      </div>
     </Container>
   );
 }
