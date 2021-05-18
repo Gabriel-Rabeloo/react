@@ -10,6 +10,8 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Page404 from '../pages/Page404';
 import Confirmation from '../pages/Confirmation';
+import Password from '../pages/Password';
+import PasswordEdit from '../pages/PasswordEdit';
 
 export default function Routes() {
   return (
@@ -24,6 +26,13 @@ export default function Routes() {
         exact
         path="/confirmation/"
         component={Confirmation}
+        isClosed={false}
+      />
+      <MyRoute exact path="/password/" component={Password} isClosed={false} />
+      <MyRoute
+        exact
+        path="/password/edit"
+        component={PasswordEdit}
         isClosed={false}
       />
       <MyRoute path="*" component={Page404} />

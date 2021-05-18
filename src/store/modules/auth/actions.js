@@ -69,3 +69,45 @@ export function confirmationFailure(payload) {
     payload,
   };
 }
+
+export function passwordRequest(payload) {
+  return {
+    type: types.PASSWORD_REQUEST,
+    payload,
+  };
+}
+
+export function passwordSuccess(payload) {
+  return {
+    type: types.PASSWORD_SUCCESS,
+    payload,
+  };
+}
+
+export function passwordFailure(payload) {
+  return {
+    type: types.PASSWORD_FAILURE,
+    payload,
+  };
+}
+
+export function passwordEditRequest(payload) {
+  return {
+    type: types.PASSWORD_EDIT_REQUEST,
+    payload,
+  };
+}
+
+export function passwordEditSuccess(payload) {
+  return {
+    type: types.PASSWORD_EDIT_SUCCESS,
+    payload,
+  };
+}
+
+export function passwordEditFailure(payload) {
+  return {
+    type: types.PASSWORD_EDIT_FAILURE,
+    payload,
+  };
+}

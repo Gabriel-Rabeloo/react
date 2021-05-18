@@ -1,6 +1,7 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import { get } from 'lodash';
+
 import * as actions from './actions';
 import * as types from '../types';
 import axios from '../../../services/axios';
@@ -41,13 +42,45 @@ function* confirmationRequest({ payload }) {
 
     toast.success('E-mail confirmado com sucesso');
 
-    axios.defaults.headers.Authorization = `Bearer ${response.data.token}`;
-
     history.push('/');
   } catch (e) {
     toast.error('Código inválido');
 
-    yield put(actions.loginFailure());
+    yield put(actions.confirmationFailure());
+  }
+}
+
+function* passwordRequest({ payload }) {
+  try {
+    const response = yield call(axios.post, '/tokens/password', payload);
+
+    const { email } = payload;
+
+    yield put(actions.passwordSuccess({ ...response.data }));
+
+    toast.success(`E-mail para redefinir a senha enviado para: ${email}`);
+
+    history.push('/password/edit');
+  } catch (e) {
+    toast.error('E-mail não encontrado');
+
+    yield put(actions.passwordFailure());
+  }
+}
+
+function* passwordEditRequest({ payload }) {
+  try {
+    const response = yield call(axios.put, '/tokens/password', payload);
+
+    yield put(actions.passwordEditSuccess({ ...response.data }));
+
+    toast.success('Senha alterada com sucesso');
+
+    history.push('/');
+  } catch (e) {
+    toast.error('Dados inválidos');
+
+    yield put(actions.passwordEditFailure());
   }
 }
 
@@ -105,4 +138,6 @@ export default all([
   takeLatest(types.PERSIST_REHYDRATE, persistRehydrate),
   takeLatest(types.REGISTER_REQUEST, registerRequest),
   takeLatest(types.CONFIRMATION_REQUEST, confirmationRequest),
+  takeLatest(types.PASSWORD_REQUEST, passwordRequest),
+  takeLatest(types.PASSWORD_EDIT_REQUEST, passwordEditRequest),
 ]);

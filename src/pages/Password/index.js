@@ -6,20 +6,19 @@ import { Form } from './styled';
 import Loading from '../../components/Loading';
 import * as actions from '../../store/modules/auth/actions';
 
-export default function Confirmation() {
+export default function Password() {
   const dispatch = useDispatch();
 
   const id = useSelector((state) => state.auth.user.id);
 
   const [email, setEmail] = useState('');
-  const [code, setCode] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
 
-    dispatch(actions.confirmationRequest({ email, code, id }));
+    dispatch(actions.passwordRequest({ email, id }));
 
     setIsLoading(false);
   }
@@ -27,9 +26,7 @@ export default function Confirmation() {
   return (
     <Container>
       <Loading isLoading={isLoading} />
-      <h1>
-        Digite o e-mail e o código que foi enviado via e-mail para a confirmação{' '}
-      </h1>
+      <h1>Digite seu e-mail </h1>
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="email">
@@ -39,16 +36,6 @@ export default function Confirmation() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Seu e-mail"
-          />
-        </label>
-
-        <label htmlFor="code">
-          Código
-          <input
-            type="text"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            placeholder="Código"
           />
         </label>
 

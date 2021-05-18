@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { get } from 'lodash';
 
 import { Container } from '../../styles/GlobalStyles';
-import { Form } from './styled';
+import { ForgotPassword, Form } from './styled';
 import * as actions from '../../store/modules/auth/actions';
 
 import Loading from '../../components/Loading';
@@ -43,6 +43,8 @@ export default function Login(props) {
     <Container>
       <Loading isLoading={isLoading} />
       <h1>Login </h1>
+
+      <ForgotPassword to="/password/">Esqueci a senha</ForgotPassword>
 
       <Form onSubmit={handleSubmit}>
         <label htmlFor="email">
