@@ -4,7 +4,7 @@
 HOW TO CONFIGURE THE PROGRAM
 ``
 
-Download this [API](http://handlebarsjs.com/) and follow the instructions in her README.md
+Download this [API](https://github.com/Gabriel-Rabeloo/api_rest) and follow the instructions in her README.md
 
  - `npm install`
 
