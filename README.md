@@ -4,7 +4,9 @@
 HOW TO CONFIGURE THE PROGRAM
 ``
 
- - `npm i`
+Download this [API](http://handlebarsjs.com/) and follow the instructions in her README.md
+
+ - `npm install`
 
   To install all dependencies.
 
