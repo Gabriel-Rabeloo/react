@@ -1,5 +1,16 @@
 # Project made with React, focusing on using and adding data to an API created by me in NodeJs.
 
+### technologies used
+- Styled-Component
+- Validator
+- History
+- Axios
+- React-Router-Dom
+- Redux
+- React-Toastify
+- Redux-Persist
+- Redux-Saga
+
 ``
 HOW TO CONFIGURE THE PROGRAM
 ``
