@@ -1,6 +1,6 @@
 # Project made with React, focusing on using and adding data to an API created by me in NodeJs.
 
-You can view this project in [Netlify](https://gabriel-react-escola.netlify.app)
+You can view this project on [Netlify](https://gabriel-react-escola.netlify.app)
 ### technologies used
 - Styled-Component
 - Validator
